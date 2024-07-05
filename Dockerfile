@@ -5,13 +5,13 @@ FROM ubuntu:latest AS build
 RUN apt-get update
 
 # Instalando o OpenJDK 17
-RUN apt-get install -y open-jdk-17
+RUN apt-get install open-jdk-17 -y
 
 # Copiando todos os arquivos do diretório atual para o diretório raiz da imagem
 COPY . .
 
 # Instalando o Maven, uma ferramenta de automação de compilação para projetos Java
-RUN apt-get install -y maven
+RUN apt-get install maven -y
 
 # Executando o Maven para limpar build anteriores e compilar o projeto
 RUN mvn clean install
