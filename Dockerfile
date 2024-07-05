@@ -11,7 +11,7 @@ RUN apt-get install -y open-jdk-17
 COPY . .
 
 # Instalando o Maven, uma ferramenta de automação de compilação para projetos Java
-RUN apt-get install maven -y
+RUN apt-get install -y maven
 
 # Executando o Maven para limpar build anteriores e compilar o projeto
 RUN mvn clean install
